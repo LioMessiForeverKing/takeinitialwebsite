@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'We believe the internet should help you know your friends. Not the random people you follow on Instagram or TikTok. We\'re building a tiny daily ritual to make deeper, everyday closeness with your actual people real.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Take With Me - Real Friends, Real Connections',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Take With Me - Real Friends, Real Connections',
     description: 'We believe the internet should help you know your friends. Not the random people you follow on Instagram or TikTok. We\'re building a tiny daily ritual to make deeper, everyday closeness with your actual people real.',
-    images: ['/twitter-image.png'],
+    images: ['/logo.png'],
     creator: '@takewithme',
     site: '@takewithme',
   },
