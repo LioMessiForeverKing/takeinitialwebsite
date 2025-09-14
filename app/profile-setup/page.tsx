@@ -281,7 +281,7 @@ export default function ProfileSetupPage() {
                 )}
               </button>
             </div>
-          </form>
+          </motion.form>
         </motion.div>
       </div>
     </div>
