@@ -80,6 +80,15 @@ export const metadata: Metadata = {
   },
   category: 'social networking',
   classification: 'Social Media Application',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/logo.png',
+    },
+  },
   other: {
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
