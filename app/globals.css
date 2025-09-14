@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Fonts are now loaded via Google Fonts in layout.tsx */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-inter);
+}
+
+body {
+  background: #ffffff;
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
+  font-feature-settings: "liga" 1;
+}
+
+/* Ensure proper font rendering */
+.font-primary {
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  font-display: swap;
+}
+
+.font-secondary {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-display: swap;
+}
+
+/* Prevent font rendering issues */
+* {
+  font-variant-ligatures: normal;
+  text-rendering: optimizeLegibility;
+}
+
