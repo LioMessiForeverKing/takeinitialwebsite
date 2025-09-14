@@ -164,8 +164,6 @@ const LandingPage = () => {
             <span className="text-white text-xs sm:text-sm font-medium" style={{ fontFamily: theme.fonts.secondary }}>N</span>
           </div>
         </motion.div>
-
-        </div>
       </div>
     </div>
   );
