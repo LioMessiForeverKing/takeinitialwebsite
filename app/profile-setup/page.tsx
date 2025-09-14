@@ -109,54 +109,100 @@ export default function ProfileSetupPage() {
   }
 
   return (
-    <div className="min-h-dvh w-full relative overflow-hidden p-4 sm:p-6 md:p-8 bg-white">
-      {/* Clean white background */}
+    <div className="min-h-dvh w-full bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 75% 75%, #8b5cf6 0%, transparent 50%)`,
+        }} />
+      </div>
 
-      <div className="relative z-10 min-h-dvh flex items-start sm:items-center justify-center">
+      <div className="relative z-10 min-h-dvh flex items-start sm:items-center justify-center p-4 sm:p-6 md:p-8">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mx-4 sm:mx-6 max-w-xl w-full bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 border-2 border-black/20"
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="mx-4 sm:mx-6 max-w-2xl w-full bg-white/90 backdrop-blur-xl rounded-3xl sm:rounded-4xl shadow-2xl p-8 sm:p-10 md:p-12 border border-gray-200/50"
         >
-          <div className="flex flex-col items-center text-center mb-6">
-            <Image src="/logo.svg" alt="tAke logo" width={56} height={56} className="mb-3" />
-            <h1 className="font-primary text-2xl sm:text-3xl md:text-4xl text-black">Pre‑make your profile</h1>
-            <p className="font-primary text-sm sm:text-base text-black/70 mt-1">Answer a few basics so you’re ready.</p>
+          <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+              className="relative mb-6"
+            >
+              <Image src="/logo.svg" alt="tAke logo" width={72} height={72} className="sm:w-[80px] sm:h-[80px]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 rounded-full blur-xl"></div>
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+              className="font-primary text-3xl sm:text-4xl md:text-5xl text-gray-900 mb-3"
+              style={{ fontFamily: theme.fonts.primary }}
+            >
+              Pre‑make your{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                profile
+              </span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+              className="font-secondary text-base sm:text-lg text-gray-600"
+              style={{ fontFamily: theme.fonts.secondary }}
+            >
+              Answer a few basics so you're ready.
+            </motion.p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
             <div>
-              <label className="block font-primary text-sm text-black/80 mb-2">Your name</label>
+              <label className="block font-secondary text-sm font-medium text-gray-700 mb-3" style={{ fontFamily: theme.fonts.secondary }}>
+                Your name
+              </label>
               <input
                 type="text"
                 value={form.fullName}
                 onChange={(e) => setForm((f) => ({ ...f, fullName: e.target.value }))}
                 placeholder="Jane Doe"
-                className="w-full rounded-xl border-2 border-black/20 bg-white px-4 py-3 text-black placeholder-black/40 outline-none focus:border-black/50"
+                className="w-full rounded-2xl border-2 border-gray-200 bg-white px-4 py-4 text-gray-900 placeholder-gray-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
+                style={{ fontFamily: theme.fonts.secondary }}
               />
             </div>
 
             <div>
-              <label className="block font-primary text-sm text-black/80 mb-2">Phone number</label>
+              <label className="block font-secondary text-sm font-medium text-gray-700 mb-3" style={{ fontFamily: theme.fonts.secondary }}>
+                Phone number
+              </label>
               <input
                 type="tel"
                 value={form.phone}
                 onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
                 placeholder="(555) 123-4567"
-                className="w-full rounded-xl border-2 border-black/20 bg-white px-4 py-3 text-black placeholder-black/40 outline-none focus:border-black/50"
+                className="w-full rounded-2xl border-2 border-gray-200 bg-white px-4 py-4 text-gray-900 placeholder-gray-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
+                style={{ fontFamily: theme.fonts.secondary }}
               />
             </div>
 
             <div>
-              <label className="block font-primary text-sm text-black/80 mb-2">Profile picture</label>
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-black/20 bg-white flex items-center justify-center">
+              <label className="block font-secondary text-sm font-medium text-gray-700 mb-3" style={{ fontFamily: theme.fonts.secondary }}>
+                Profile picture
+              </label>
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 bg-gray-50 flex items-center justify-center">
                   {form.avatarPreviewUrl ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={form.avatarPreviewUrl} alt="avatar preview" className="w-full h-full object-cover" />
                   ) : (
-                    <span className="text-black/40 text-xs">No photo</span>
+                    <span className="text-gray-400 text-sm">No photo</span>
                   )}
                 </div>
                 <input
@@ -171,37 +217,68 @@ export default function ProfileSetupPage() {
                       reader.readAsDataURL(file);
                     }
                   }}
-                  className="block text-sm text-black/80"
+                  className="block text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block font-primary text-sm text-black/80 mb-2">Add your creatives</label>
-              <div className="w-full rounded-xl border-2 border-dashed border-black/20 bg-white px-4 py-6 flex flex-col items-center justify-center text-center">
-                <span className="font-primary text-base text-black/70">Coming soon</span>
-                <span className="mt-2 text-xs text-black/50">Connect your creatives</span>
-                <span className="mt-1 text-[10px] uppercase tracking-wide text-black/40">Powered by Yubi</span>
+              <label className="block font-secondary text-sm font-medium text-gray-700 mb-3" style={{ fontFamily: theme.fonts.secondary }}>
+                Add your creatives
+              </label>
+              <div className="w-full rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 px-6 py-8 flex flex-col items-center justify-center text-center">
+                <svg className="w-8 h-8 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                <span className="font-secondary text-base text-gray-600 mb-2" style={{ fontFamily: theme.fonts.secondary }}>Coming soon</span>
+                <span className="text-sm text-gray-500 mb-1">Connect your creatives</span>
+                <span className="text-xs uppercase tracking-wide text-gray-400">Powered by Yubi</span>
               </div>
             </div>
 
-            {error && <p className="text-sm text-red-600">{error}</p>}
-            {success && <p className="text-sm text-green-700">{success}</p>}
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-red-600 text-sm text-center bg-red-50 border border-red-200 rounded-2xl px-4 py-3"
+              >
+                {error}
+              </motion.div>
+            )}
 
-            <div className="flex items-center justify-end gap-3 pt-2">
+            {success && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-green-600 text-sm text-center bg-green-50 border border-green-200 rounded-2xl px-4 py-3"
+              >
+                {success}
+              </motion.div>
+            )}
+
+            <div className="flex gap-4 pt-6">
               <button
                 type="button"
                 onClick={() => router.back()}
-                className="rounded-xl border-2 border-black/20 bg-white px-5 py-2.5 text-black hover:border-black/40 transition-colors"
+                className="flex-1 rounded-2xl border-2 border-gray-200 bg-white px-6 py-4 text-gray-700 hover:border-gray-300 hover:bg-gray-50 transition-all duration-200 font-medium"
+                style={{ fontFamily: theme.fonts.secondary }}
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={!isValid || loading}
-                className="rounded-xl bg-black text-white px-6 py-2.5 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-opacity-90 transition-colors"
+                className="flex-1 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                style={{ fontFamily: theme.fonts.secondary }}
               >
-                {loading ? "Saving…" : "Save profile"}
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Saving…
+                  </div>
+                ) : (
+                  "Save profile"
+                )}
               </button>
             </div>
           </form>

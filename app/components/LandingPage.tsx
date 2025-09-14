@@ -33,65 +33,100 @@ const LandingPage = () => {
         }} />
       </div>
 
-      <div className="relative z-10 min-h-dvh flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-12">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -30, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mb-12 sm:mb-16"
-        >
-          <div 
-            className="text-7xl sm:text-8xl md:text-9xl font-primary text-gray-900 relative"
-            style={{ fontFamily: theme.fonts.primary }}
+      <div className="relative z-10 min-h-dvh flex flex-col items-center justify-between px-4 sm:px-6 md:px-8 py-8">
+        {/* Top Section - Logo and Content */}
+        <div className="flex flex-col items-center text-center flex-1 justify-center">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -30, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="mb-8 sm:mb-12"
           >
-            <span className="relative z-10">t.</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 rounded-full blur-xl"></div>
-          </div>
-        </motion.div>
+            <div 
+              className="text-6xl sm:text-7xl md:text-8xl font-primary text-gray-900 relative"
+              style={{ fontFamily: theme.fonts.primary }}
+            >
+              <span className="relative z-10">t.</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 rounded-full blur-xl"></div>
+            </div>
+          </motion.div>
 
-        {/* Main Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-          className="max-w-5xl mx-auto text-center mb-16 sm:mb-20"
-        >
-          {/* Main heading */}
-          <h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-primary text-gray-900 mb-8 sm:mb-10 leading-tight tracking-tight"
-            style={{ fontFamily: theme.fonts.primary }}
+          {/* Main Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+            className="max-w-4xl mx-auto"
           >
-            We believe the internet should help you know your{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              friends
-            </span>.
-          </h1>
+            {/* Main heading */}
+            <h1 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary text-gray-900 mb-6 sm:mb-8 leading-tight tracking-tight"
+              style={{ fontFamily: theme.fonts.primary }}
+            >
+              We believe the internet should help you know your{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                friends
+              </span>.
+            </h1>
 
-          {/* Subheading */}
-          <p 
-            className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-8 sm:mb-10 leading-relaxed font-light"
-            style={{ fontFamily: theme.fonts.secondary }}
-          >
-            Not the random people you follow on Instagram or TikTok.
-          </p>
+            {/* Subheading */}
+            <p 
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed font-light"
+              style={{ fontFamily: theme.fonts.secondary }}
+            >
+              Not the random people you follow on Instagram or TikTok.
+            </p>
 
-          {/* Description */}
-          <div 
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-12 sm:mb-16 leading-relaxed space-y-6 max-w-4xl mx-auto"
-            style={{ fontFamily: theme.fonts.secondary }}
+            {/* Description */}
+            <div 
+              className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-10 leading-relaxed space-y-4 max-w-3xl mx-auto"
+              style={{ fontFamily: theme.fonts.secondary }}
+            >
+              <p className="font-light">
+                We're betting you want deeper, everyday closeness with your actual people.
+              </p>
+              <p className="font-light">
+                We're building a tiny daily ritual to make that real.
+              </p>
+              <p className="font-medium text-gray-900 text-lg sm:text-xl">
+                If this resonates, sign up and help us build it.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom Section - Scroll Indicator and Button */}
+        <div className="flex flex-col items-center w-full">
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+            className="mb-6 sm:mb-8"
           >
-            <p className="font-light">
-              We're betting you want deeper, everyday closeness with your actual people.
-            </p>
-            <p className="font-light">
-              We're building a tiny daily ritual to make that real.
-            </p>
-            <p className="font-medium text-gray-900 text-xl sm:text-2xl">
-              If this resonates, sign up and help us build it.
-            </p>
-          </div>
-        </motion.div>
+            <div className="flex flex-col items-center gap-3">
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="text-gray-500 text-sm font-medium"
+                style={{ fontFamily: theme.fonts.secondary }}
+              >
+                ↓ Sign up below ↓
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="w-1 h-3 bg-gray-500 rounded-full mt-2"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
 
         {/* Google Sign Up Button */}
         <motion.div
@@ -149,7 +184,7 @@ const LandingPage = () => {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               />
             </svg>
-            Continue with Google
+            Sign up with Google
           </button>
         </motion.div>
 
@@ -164,6 +199,7 @@ const LandingPage = () => {
             <span className="text-white text-sm font-medium" style={{ fontFamily: theme.fonts.secondary }}>N</span>
           </div>
         </motion.div>
+        </div>
       </div>
     </div>
   );
