@@ -78,7 +78,7 @@ export default function WelcomePage() {
   }, []);
 
   return (
-    <div className="min-h-dvh w-full bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -86,12 +86,12 @@ export default function WelcomePage() {
         }} />
       </div>
 
-      <div className="relative z-10 min-h-dvh flex items-center justify-center p-4 sm:p-6 md:p-8">
+      <div className="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mx-4 sm:mx-6 max-w-2xl sm:max-w-3xl w-full bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-4xl shadow-2xl p-8 sm:p-10 md:p-12 text-center border border-gray-200/50"
+          className="mx-4 sm:mx-6 max-w-2xl sm:max-w-3xl w-full bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl md:rounded-4xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 text-center border border-gray-200/50"
         >
           {/* Logo */}
           <motion.div

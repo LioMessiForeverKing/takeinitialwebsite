@@ -25,7 +25,7 @@ const LandingPage = () => {
   }, [router]);
 
   return (
-    <div className="min-h-dvh w-full bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -33,107 +33,72 @@ const LandingPage = () => {
         }} />
       </div>
 
-      <div className="relative z-10 min-h-dvh flex flex-col items-center justify-between px-4 sm:px-6 md:px-8 py-8">
-        {/* Top Section - Logo and Content */}
-        <div className="flex flex-col items-center text-center flex-1 justify-center">
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, y: -30, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="mb-8 sm:mb-12"
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -30, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="mb-6 sm:mb-8 md:mb-12"
+        >
+          <div 
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-primary text-gray-900 relative"
+            style={{ fontFamily: theme.fonts.primary }}
           >
-            <div 
-              className="text-6xl sm:text-7xl md:text-8xl font-primary text-gray-900 relative"
-              style={{ fontFamily: theme.fonts.primary }}
-            >
-              <span className="relative z-10">t.</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 rounded-full blur-xl"></div>
-            </div>
-          </motion.div>
-
-          {/* Main Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-            className="max-w-4xl mx-auto"
-          >
-            {/* Main heading */}
-            <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary text-gray-900 mb-6 sm:mb-8 leading-tight tracking-tight"
-              style={{ fontFamily: theme.fonts.primary }}
-            >
-              We believe the internet should help you know your{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                friends
-              </span>.
-            </h1>
-
-            {/* Subheading */}
-            <p 
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed font-light"
-              style={{ fontFamily: theme.fonts.secondary }}
-            >
-              Not the random people you follow on Instagram or TikTok.
-            </p>
-
-            {/* Description */}
-            <div 
-              className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-10 leading-relaxed space-y-4 max-w-3xl mx-auto"
-              style={{ fontFamily: theme.fonts.secondary }}
-            >
-              <p className="font-light">
-                We're betting you want deeper, everyday closeness with your actual people.
-              </p>
-              <p className="font-light">
-                We're building a tiny daily ritual to make that real.
-              </p>
-              <p className="font-medium text-gray-900 text-lg sm:text-xl">
-                If this resonates, sign up and help us build it.
-              </p>
-            </div>
-          </motion.div>
+            <span className="relative z-10">t.</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 rounded-full blur-xl"></div>
         </div>
+        </motion.div>
 
-        {/* Bottom Section - Scroll Indicator and Button */}
-        <div className="flex flex-col items-center w-full">
-          {/* Scroll Indicator */}
+        {/* Main Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
-            className="mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+          className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16"
+        >
+          {/* Main heading */}
+          <h1 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-gray-900 mb-4 sm:mb-6 md:mb-8 leading-tight tracking-tight px-2"
+            style={{ fontFamily: theme.fonts.primary }}
           >
-            <div className="flex flex-col items-center gap-3">
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="text-gray-500 text-sm font-medium"
-                style={{ fontFamily: theme.fonts.secondary }}
-              >
-                ↓ Sign up below ↓
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
-              >
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                  className="w-1 h-3 bg-gray-500 rounded-full mt-2"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
+            We believe the internet should help you know your{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              friends
+            </span>.
+          </h1>
+
+          {/* Subheading */}
+          <p 
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-4 sm:mb-6 md:mb-8 leading-relaxed font-light px-2"
+            style={{ fontFamily: theme.fonts.secondary }}
+          >
+            Not the random people you follow on Instagram or TikTok.
+          </p>
+
+          {/* Description */}
+          <div 
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-6 sm:mb-8 md:mb-10 leading-relaxed space-y-3 sm:space-y-4 max-w-3xl mx-auto px-2"
+            style={{ fontFamily: theme.fonts.secondary }}
+          >
+            <p className="font-light">
+              We're betting you want deeper, everyday closeness with your actual people.
+            </p>
+            <p className="font-light">
+              We're building a tiny daily ritual to make that real.
+            </p>
+            <p className="font-medium text-gray-900 text-base sm:text-lg md:text-xl">
+              If this resonates, sign up and help us build it.
+            </p>
+          </div>
+        </motion.div>
 
         {/* Google Sign Up Button */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="w-full max-w-lg"
+          className="w-full max-w-sm sm:max-w-md md:max-w-lg mb-8 sm:mb-12"
         >
           <button 
             onClick={async () => {
@@ -158,14 +123,14 @@ const LandingPage = () => {
                 },
               });
             }}
-            className="w-full bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 hover:text-gray-900 rounded-2xl px-8 py-5 font-medium text-lg sm:text-xl transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl flex items-center justify-center gap-4 group transform hover:scale-105"
+            className="w-full bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 hover:text-gray-900 rounded-2xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 font-medium text-sm sm:text-base md:text-lg transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl flex items-center justify-center gap-2 sm:gap-3 md:gap-4 group transform hover:scale-105"
             style={{ fontFamily: theme.fonts.secondary }}
           >
             <svg
-              width="24"
-              height="24"
+              width="18"
+              height="18"
+              className="sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200"
               viewBox="0 0 24 24"
-              className="group-hover:scale-110 transition-transform duration-200"
             >
               <path
                 fill="#4285F4"
@@ -188,17 +153,18 @@ const LandingPage = () => {
           </button>
         </motion.div>
 
-        {/* Bottom accent */}
+        {/* Bottom accent - Hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="absolute bottom-8 left-8"
+          className="hidden sm:block absolute bottom-4 sm:bottom-6 left-4 sm:left-6"
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center shadow-lg">
-            <span className="text-white text-sm font-medium" style={{ fontFamily: theme.fonts.secondary }}>N</span>
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center shadow-lg">
+            <span className="text-white text-xs sm:text-sm font-medium" style={{ fontFamily: theme.fonts.secondary }}>N</span>
           </div>
         </motion.div>
+
         </div>
       </div>
     </div>
